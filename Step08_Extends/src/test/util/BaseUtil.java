@@ -8,7 +8,7 @@ public class BaseUtil {
 	
 	//삭제 기능을 수행하는 static 메소드
 	public static void clear() {
-		System.out.println("깨끗이 삭제 합니다.");
+		System.out.println("깨끗이 삭제 합니다.`");
 	}
 
 }
