@@ -1,18 +1,22 @@
 package test.main;
-//class? extends Weapon{@Override Public void attack(){}}
+
 //new Weapon을 한 후 ctrl Space를 하면 오버라이드까지자동으로 생성해준다.
 import test.myPec.Weapon;
 
 public class MainClass06 {
 	public static void main(String[] args) {
+		
+		
 		Weapon w1= new Weapon() {
 			
 			@Override
-			public void attack() {
+			public void attack() {					//class? extends Weapon{@Override Public void attack(){}}
 				System.out.println("아무나 공격하자");
 				
 			}
 		};
+		
+		
 		useWeapon(w1);
 		
 		useWeapon(new Weapon() {
