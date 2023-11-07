@@ -51,7 +51,7 @@ public class MainClass05 {
 		 * String.format("format 문자열",전달할 값1, 전달할 값2, ...)
 		 */
 		members.forEach((tmp)->{
-			String result=String.format("번호:%d, 이름:%s, 주소:%s",tmp.num,tmp.name,tmp.addr);
+			String result=String.format("번호:%d, 이름:%s, 주소:%s", tmp.num, tmp.name, tmp.addr);
 			System.out.println(result);
 		});
 
