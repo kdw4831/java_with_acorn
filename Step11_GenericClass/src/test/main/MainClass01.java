@@ -1,5 +1,7 @@
 package test.main;
 
+
+
 import test.myPec.Apple;
 import test.myPec.FruitBox;
 import test.myPec.Mellon;
@@ -22,6 +24,8 @@ public class MainClass01 {
 		//Generic 클래스가 Orange로 되어 있는 객체 사용하기
 		box2.pack(new Orange()); //Orange type을 매개 변수에 전달한다.
 		Orange f2=box2.unPack(); //Orange type이 리턴된다.
+	
+		
 		
 	}
 }
