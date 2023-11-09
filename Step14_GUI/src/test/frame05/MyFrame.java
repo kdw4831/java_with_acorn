@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class MyFrame extends JFrame implements ActionListener{
+	//필드
+	//객체 전체에서 공유할 값들은 필드에 담아 두면 사용할 수 있다.
+	JButton sendBtn, updateBtn, deleteBtn;
 	
 	//생성자
 	public MyFrame() {
@@ -25,9 +28,9 @@ public class MyFrame extends JFrame implements ActionListener{
 		//FlowLayout 메니저 사용해보기
 		setLayout(new FlowLayout());
 		
-		JButton sendBtn=new JButton("전송");
-		JButton updateBtn=new JButton("수정");
-		JButton deleteBtn=new JButton("삭제");
+		sendBtn=new JButton("전송");
+		updateBtn=new JButton("수정");
+		deleteBtn=new JButton("삭제");
 		
 		sendBtn.addActionListener(this);
 		updateBtn.addActionListener(this);
@@ -70,7 +73,15 @@ public class MyFrame extends JFrame implements ActionListener{
 		// 위와 동일한 동작을 아래의 메소드가 리턴해주는 Object의 참조값(JButton의 참조값)을
 		// 활용하는 구조로 MyFrame 클래스를 수정해 보세요
 		// hint : 필드를 활용!
-		Object obj =e.getSource();
+		Object obj =e.getSource();  // getSource 참조값을 불러오는 메소드이다.
+		
+		if(obj == sendBtn) {
+			System.out.println("전송 합니다.");
+		}else if(obj == updateBtn) {
+			System.out.println("수정 합니다.");
+		}else if(obj == deleteBtn) {
+			System.out.println("삭제 합니다.");
+		}
 		
 	}
 }
