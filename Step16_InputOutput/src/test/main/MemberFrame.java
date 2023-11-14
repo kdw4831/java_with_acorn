@@ -132,6 +132,8 @@ public class MemberFrame extends JFrame implements ActionListener{
 			}catch(Exception e) {}
 		}	
 	}
+
+	
 	
 	//List<MemberDto> 객체를 파일에 저장하는 메소드
 	public void saveToFile() {

@@ -93,10 +93,8 @@ public class MyFrameQuiz extends JFrame {
       this.add(p1, BorderLayout.SOUTH);
       p1.setBackground(Color.YELLOW);
    
-      //읽어드리기
-    
-      
      
+    
       
       infoList= new ArrayList<MemberDto>();
       addbtn.addActionListener((e)->{
@@ -125,10 +123,10 @@ public class MyFrameQuiz extends JFrame {
             fis= new FileInputStream("c:/acorn202310/MyFolder/my_members.dat");
             ois=new ObjectInputStream(fis);
             
-         
+            oos.writeObject(infoList);
             
             for(MemberDto tmp:infoList) {
-               oos.writeObject(tmp);
+              
 
                dtoRead=(MemberDto)ois.readObject();
                String info=String.format("%d %s %s",dtoRead.getNum(),dtoRead.getName(),dtoRead.getAddr() );
