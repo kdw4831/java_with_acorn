@@ -20,15 +20,13 @@ public class MainClass14 {
 		
 		
 		//MemberDao 객체를 이용해서 수정하기
-		MemberDto dto=new MemberDto(20,"김대원","암사동");
-		int num2=20;
+		MemberDto dto=new MemberDto(2,"김대원","암사동");
 		
-		
-		boolean isSucess2= new MemberDao().update(null);
+		boolean isSucess2= new MemberDao().update(dto);
 		if(isSucess2==true) {
 			System.out.println(dto.getNum()+"번 회원을 수정 했습니다.");
 		}else {
-			System.out.println("삭제할 회원정보가 존재하지 않습니다.");
+			System.out.println("수정 할 회원정보가 존재하지 않습니다.");
 		}
 	}
 }
