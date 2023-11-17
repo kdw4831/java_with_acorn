@@ -176,8 +176,72 @@ public class TodoListDao {
 		return list;
 	}
 
+	public void seqdrop() {
+	      //필요한 객체의 참조값을 담을 지역 변수 미리 선언
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      PreparedStatement pstmt2 = null;
+	     
+	      try {
+	         //미리 준비한 util 클래스를 이용해서 Connection 객체 얻어오기 
+	         conn = new DBConnect().getConn();
+	         //실행할 미완성의 sql 문
+	         String sql = "drop sequence todolist_seq";
+	        
+	         //미완성의 sql 문을 전달하면서 PreparedStatement 객체의 참조값 얻어내기
+	         pstmt = conn.prepareStatement(sql);
+	       
+	         pstmt.executeUpdate();
+	       
+	        
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	        	
+	            if (pstmt != null)
+	               pstmt.close();
+	            if (conn != null)
+	               conn.close();
+	         } catch (Exception e) {
+	         }
+	      }
+	      
 	
+	}
+	public void seqcreate() {
+	      //필요한 객체의 참조값을 담을 지역 변수 미리 선언
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	    
+	     
+	      try {
+	         //미리 준비한 util 클래스를 이용해서 Connection 객체 얻어오기 
+	         conn = new DBConnect().getConn();
+	         //실행할 미완성의 sql 문
+	         
+	         String sql = "create sequence todolist_seq";
+	         //미완성의 sql 문을 전달하면서 PreparedStatement 객체의 참조값 얻어내기
+	        
+	         pstmt = conn.prepareStatement(sql);
+	        
+	         pstmt.executeUpdate();
+	      
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	        
+	            if (pstmt != null)
+	               pstmt.close();
+	            if (conn != null)
+	               conn.close();
+	         } catch (Exception e) {
+	         }
+	      }
+	      
 	
-	
+	}
 	
 }
